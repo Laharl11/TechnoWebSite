@@ -1,11 +1,11 @@
 <?php
 
-$txt = $_POST['UserName'];
-$email = $_POST['Email'];
-$pswd = $_POST['Password'];
+$UserName = $_POST['UserName'];
+$Email = $_POST['Email'];
+$Password = $_POST['Password'];
 
 
-$con=mysqli_connect("localhost", "root", "", "vaccicareph");
+$con=mysqli_connect("localhost", "root", "", "philnance");
 
 if ($con -> connect_error){
 
@@ -14,7 +14,7 @@ if ($con -> connect_error){
 
 
     $stmt - $con->prepare("insert into registration(UserName, Email, Password) values(?,?,?)");
-    $stmt -> bind_param ("ssi", $txt, $email, $pswd);
+    $stmt -> bind_param ("ssi", $UserName, $Email, $Password);
     $stmt -> execute();
     echo "Registration successful";
     $stmt -> close();
