@@ -2,32 +2,31 @@
     session_start();
 
     $Email = $_POST['Email'];
-    $Password = $_POST['Password'];
+    $inputPassword = $_POST['Password'];
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $con= mysqli_connect('localhost', 'root', '','philnance');
         if ($con->connect_error){
             die ('Connection failed : ' .$con->connect_error);
         } else{
-            $query = mysqli_query($con, "SELECT * FROM 'login' WHERE Email = '".$_POST['Email']."'");
+            $query = mysqli_query($con, "SELECT * FROM 'login' WHERE Email = '".$Email."'");
             if(mysqli_num_rows($query)) {
                 $user = $query->fetch_assoc();
-                $hashPassword = $user["password"];
-                if(password_verify($inputPassword, $hashPassword)){
-                    $_SESSION['id'] = $user["userID"];
-                    $_SESSION['email'] = $user["email"];
-                    //redirect to user main page
+                $hashPassword = $user["Password"];
+               
+                if($inputPassword == $user["Password"]){
+                    #$_SESSION['adminID'] = $user["adminID"];
+                    $_SESSION['Email'] = $user["Email"];
                     header("location: blank.html");
-                    //echo $_SESSION['id'];
-                }else{
-                    $_SESSION['UserLoginError'] = "yes";
-                    header("location: login_register_page.html");
+                }
+                else{
+                    $_SESSION['LoginError'] = "yes";
+                    header("location: loginAdminPage.php");
                 }
             }else{
-                $_SESSION['UserLoginError'] = "yes";
-                header("location: login_register_page.html");
+                $_SESSION['LoginError'] = "yes";
+                header("location: loginAdminPage.php");
             }
         }
    }
-    
 ?>
