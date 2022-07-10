@@ -9,7 +9,7 @@
         if ($con->connect_error){
             die ('Connection failed : ' .$con->connect_error);
         } else{
-            $query = mysqli_query($con, "SELECT * FROM users WHERE email = '".$_POST['Email']."'");
+            $query = mysqli_query($con, "SELECT * FROM 'login' WHERE Email = '".$_POST['Email']."'");
             if(mysqli_num_rows($query)) {
                 $user = $query->fetch_assoc();
                 $hashPassword = $user["password"];
@@ -17,15 +17,15 @@
                     $_SESSION['id'] = $user["userID"];
                     $_SESSION['email'] = $user["email"];
                     //redirect to user main page
-                    header("location: MainPage.php");
+                    header("location: blank.html");
                     //echo $_SESSION['id'];
                 }else{
                     $_SESSION['UserLoginError'] = "yes";
-                    header("location: loginPage.php");
+                    header("location: login_register_page.html");
                 }
             }else{
                 $_SESSION['UserLoginError'] = "yes";
-                header("location: loginPage.php");
+                header("location: login_register_page.html");
             }
         }
    }
