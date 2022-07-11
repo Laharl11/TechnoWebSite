@@ -260,7 +260,8 @@ section {
 }
 
 .header .logo img {
-  max-height: 40px;
+  max-height: 50px;
+  max-width: 500px;
   margin-right: 6px;
 }
 
@@ -2089,7 +2090,7 @@ section {
 }
 
 .footer .footer-content .footer-info .logo img {
-  max-height: 40px;
+  max-height: 200px;
   margin-right: 6px;
 }
 
