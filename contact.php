@@ -119,10 +119,10 @@
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
 
-            <form class="php-email-form">
+            <form class="php-email-form"  id="contact-form" method="post" role="form">
               <div class="row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="First Name" required>
+                  <input type="text"  class="form-control" name="name" id="name" placeholder="First Name" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
                   <input type="text" class="form-control" name="surname" id="surname" placeholder="Last Name" required>
@@ -132,7 +132,7 @@
                 <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone" required>
               </div>
               <div class="form-group mt-3">
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
@@ -142,11 +142,22 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center"><button type="submit" name="ok">Send Message</button></div>
             </form>
 
           </div><!-- End Contact Form -->
-
+          <?php 
+            if(isset($_POST['ok'])){
+                include_once 'function.php';
+                $obj=new Contact();
+                $res=$obj->contact_us($_POST);
+                if($res==true){
+                    echo "<script>alert('Query successfully Submitted.Thank you')</script>";
+                }else{
+                    echo "<script>alert('Something Went wrong!!')</script>";
+                }
+            }
+            ?>
         </div>
 
       </div>
