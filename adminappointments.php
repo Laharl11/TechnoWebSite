@@ -1,8 +1,9 @@
 <!doctype html>
 <html lang="en">
   <head>
+   <link href="assets/img/180.png" rel="icon">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <title>messages</title>
+    <title>PhilNance - Messages</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -33,7 +34,7 @@
     
     <form action="" method="post">
                 <span class="details">&nbsp &nbsp</span>
-                <input type="number" id="user" name="user" placeholder="Search user ID" required>
+                <input type="text" id="user" name="user" placeholder="Search Last Name" required>
                 <input type="submit" name="submit" value="Search">
     </form>
 
@@ -66,7 +67,7 @@
 
         if(isset($_POST['submit'])){
             $userID = $_POST['user'];
-            $searchSql = "SELECT * FROM contact_us WHERE id = '".$userID."'";
+            $searchSql = "SELECT * FROM contact_us WHERE last_name = '".$userID."'";
 
             $searchResult = $con->query($searchSql);
 
