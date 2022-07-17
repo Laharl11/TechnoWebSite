@@ -81,7 +81,7 @@
                 <td> <?php echo $row['message']; ?></td>
                 <td> <?php echo $row['datetime']; ?></td>
                 <td>
-                <input type="submit" onclick="approveFunc('<?=$row['id'];?>')" name="delete" value="delete"/>
+                <input type="submit" onclick="approveFunc('<?=$row['id'];?>')" name="Delete" value="delete"/>
                 
                 </td>
                 
@@ -109,7 +109,7 @@
                 <td> <?php echo $row['message']; ?></td>
                 <td> <?php echo $row['datetime']; ?></td>
                 <td>
-                <input type="submit" onclick="approveFunc('<?=$row['id'];?>')" name="delete" value="delete"/>
+                <input type="submit" onclick="approveFunc('<?=$row['id'];?>')" name="Delete" value="Delete"/>
                 
                 </td>
                         
