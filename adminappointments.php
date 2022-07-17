@@ -34,7 +34,7 @@
     
     <form action="" method="post">
                 <span class="details">&nbsp &nbsp</span>
-                <input type="text" id="user" name="user" placeholder="Search Last Name" required>
+                <input type="text" id="user" name="user" placeholder="Search Name or ID" required>
                 <input type="submit" name="submit" value="Search">
     </form>
 
@@ -66,8 +66,8 @@
 
 
         if(isset($_POST['submit'])){
-            $userID = $_POST['user'];
-            $searchSql = "SELECT * FROM contact_us WHERE last_name = '".$userID."'";
+            $name = $_POST['user'];
+            $searchSql = "SELECT * FROM contact_us WHERE last_name = '".$name."' OR first_name = '".$name."'  OR id = '".$name."'  ";
 
             $searchResult = $con->query($searchSql);
 
