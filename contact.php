@@ -57,8 +57,9 @@
           <li><a href="index.html" >Home</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="howitworks.html">How It Works/FAQs</a></li>
+          <li><a href="blog.html">Blog</a></li>
           <li><a href="contact.html" class="active">Contact Us</a></li>
-          <li><a href="login_register_page.html">Sign Up/Login</a></li>
+          
           
         </ul>
       </nav><!-- .navbar -->
@@ -72,10 +73,10 @@
     <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/zeeshan-tejani-FVRgbf99V6k-unsplash.jpg');">
       <div class="container position-relative d-flex flex-column align-items-center">
 
-        <h2>Contact</h2>
+        <h2>Contact Us</h2>
         <ol>
           <li><a href="index.html">Home</a></li>
-          <li>Contact</li>
+          <li>Contact Us</li>
         </ol>
 
       </div>
@@ -190,7 +191,7 @@
             <ul>
               <li><i class="bi bi-dash"></i> <a href="index.html">Home</a></li>
               <li><i class="bi bi-dash"></i> <a href="about.html">About us</a></li>
-              
+              <li><i class="bi bi-dash"></i> <a href="howitworks.html">How It Works</a></li>
             </ul>
           </div>
 
