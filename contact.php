@@ -103,7 +103,7 @@
               <i class="bi bi-envelope flex-shrink-0"></i>
               <div>
                 <h4>Email:</h4>
-                <p>philnance@example.com</p>
+                <p>philnance@gmail.com</p>
               </div>
             </div><!-- End Info Item -->
 
@@ -152,9 +152,9 @@
                 $obj=new Contact();
                 $res=$obj->contact_us($_POST);
                 if($res==true){
-                    echo "<script>alert('Query successfully Submitted.Thank you')</script>";
+                    echo "<script>alert('Message successfully Submitted. Thank you!')</script>";
                 }else{
-                    echo "<script>alert('Query successfully Submitted.Thank you')</script>";
+                    echo "<script>alert('Message successfully Submitted. Thank you!')</script>";
                 }
             }
             ?>
@@ -188,10 +188,9 @@
           <div class="col-lg-2 col-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bi bi-dash"></i> <a href="#">Home</a></li>
-              <li><i class="bi bi-dash"></i> <a href="#">About us</a></li>
-              <li><i class="bi bi-dash"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bi bi-dash"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bi bi-dash"></i> <a href="index.html">Home</a></li>
+              <li><i class="bi bi-dash"></i> <a href="about.html">About us</a></li>
+              
             </ul>
           </div>
 

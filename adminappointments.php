@@ -50,7 +50,7 @@
       <th scope="col">Phone</th>
       <th scope="col">Message</th>
       <th scope="col">Date Time</th>
-      
+      <th scope="col">Action</th>
       
     </tr>
   </thead>
@@ -80,6 +80,10 @@
                 <td> <?php echo $row['phone']; ?></td>
                 <td> <?php echo $row['message']; ?></td>
                 <td> <?php echo $row['datetime']; ?></td>
+                <td>
+                <input type="submit" onclick="approveFunc('<?=$row['id'];?>')" name="delete" value="delete"/>
+                
+                </td>
                 
                 
         <?php
@@ -104,6 +108,10 @@
                 <td> <?php echo $row['phone']; ?></td>
                 <td> <?php echo $row['message']; ?></td>
                 <td> <?php echo $row['datetime']; ?></td>
+                <td>
+                <input type="submit" onclick="approveFunc('<?=$row['id'];?>')" name="delete" value="delete"/>
+                
+                </td>
                         
            <?php }
         }
@@ -116,6 +124,20 @@
 
 </tbody>
     </table>  
-    
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        function approveFunc(id){
+          $.ajax({
+          type: 'POST',
+          url: 'delete.php',
+          data: "id=" + id,
+          success: function(data) {
+              location.reload();
+              console.log(data);
+            }
+          });
+        }
+        
+    </script>
   </body>
 </html>
